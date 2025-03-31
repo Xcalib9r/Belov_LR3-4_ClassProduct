@@ -9,5 +9,43 @@ using namespace std;
 
 class Product
 {
+    string ProductName;
+    float price;
+    int kolvo;
+    vector<string>ListIngridient;
+
+    public:
+    //Конструкторы 
+    Product();//конструктор
+    //параметризованный конструктор 
+    Product(string ProductName);
+    //параметризованный конструктор
+    Product(string ProductName,float price,int kolv,vector<string>ListIngridient);
+    Product(const Product &ob);//конструктор копирования
+
+    ~Product()//деструктор
+    { }
+
+    //set-методы
+    void setProductName(const string& ProductName){this->ProductName=ProductName; }
+    void setprice(const float& price){this->price=price; }
+    void setkolvo(const int& kolvo){this->kolvo=kolvo; }
+    void setListIngridient(vector<string>& ListIngridient){this->ListIngridient=ListIngridient; }
+
+    //get-методы
+    string getProductName() const{return ProductName; }
+    float getprice() const{return price; }
+    int getkolvo() const{return kolvo; }
+    vector<string> getListIngridient() const{return ListIngridient; }
+
     
-}
+
+
+    friend ostream& operator<<(ostream& mystream, const Product &obj);
+    friend istream& operator>>(istream& mystream, Product &obj);
+
+
+
+};
+
+#endif
