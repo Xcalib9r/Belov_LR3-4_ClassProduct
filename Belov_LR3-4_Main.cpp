@@ -1,6 +1,6 @@
 #include <ctime>
 #include <M:\\Belov_Lab\\Belov_LR3\\Belov_LR3-4_ClassProduct\\Belov_LR3-4_Main.cpp>
-
+//добавить конструктор копирования и вывод всех объектов
 using namespace std;
 
 int main()

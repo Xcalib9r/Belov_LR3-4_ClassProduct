@@ -18,9 +18,9 @@ class Product
     //Конструкторы 
     Product();//конструктор
     //параметризованный конструктор 
-    Product(string ProductName);
+    Product(const string &ProductName);
     //параметризованный конструктор
-    Product(string ProductName,float price,int kolv,vector<string>ListIngridient);
+    Product(const string &ProductName,float price,int kolv,vector<string>ListIngridient);
     Product(const Product &ob);//конструктор копирования
 
     ~Product()//деструктор
@@ -38,8 +38,13 @@ class Product
     int getkolvo() const{return kolvo; }
     vector<string> getListIngridient() const{return ListIngridient; }
 
-    
-
+    //Объявление операторов для ClassProduct.cpp
+    float calculateTotalCost() const;
+    Product operator&(const Product &b);
+    bool operator>(const Product &b);
+    float operator+(const Product &b);
+    Product &operator++();
+    Product operator++(int); 
 
     friend ostream& operator<<(ostream& mystream, const Product &obj);
     friend istream& operator>>(istream& mystream, Product &obj);
