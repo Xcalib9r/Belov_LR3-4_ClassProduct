@@ -40,11 +40,19 @@ class Product
 
     //Объявление операторов для ClassProduct.cpp
     float calculateTotalCost() const;
-    Product operator&(const Product &b);
-    bool operator>(const Product &b);
-    float operator+(const Product &b);
+    Product operator&(const Product &b);//сложение и объединение партий
+    bool operator>(const Product &b) {return this->price > b.price;}
+    bool operator<(const Product &b){return this->price<b.price;}
+    bool operator>=(const Product &b){return this->price>=b.price;}
+    bool operator<=(const Product &b){return this->price<=b.price;}
+    bool operator==(const Product &b){return this->price=b.price;}
+    bool operator!=(const Product &b){return this->price!=b.price;}
+    
+
+    float operator+(const Product &b);//сложение по цене
     Product &operator++();
     Product operator++(int); 
+    Product& operator=(const Product& other);
 
     friend ostream& operator<<(ostream& mystream, const Product &obj);
     friend istream& operator>>(istream& mystream, Product &obj);

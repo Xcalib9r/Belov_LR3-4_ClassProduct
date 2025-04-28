@@ -1,24 +1,29 @@
 #include <ctime>
-#include <M:\\Belov_Lab\\Belov_LR3\\Belov_LR3-4_ClassProduct\\Belov_LR3-4_Main.cpp>
+#include <iostream>
+#include "Belov_LR3-4_ClassProduct.cpp"
 //добавить конструктор копирования и вывод всех объектов
 using namespace std;
-
+//Структура для описания пункта меню
+struct MenuItem{
+    string title; //название пункта меню
+    function<void()> action; //Действие, выполняемое при выборе пункта
+};
 int main()
 {
     map<int, MenuItem> menu = {
         {1,{"Создание дефолтного конструктора Product", createProDefault}},
-        {2,{"Преобразование", createProDeg}},
-        {3,{"Параметризованный", createProCoeff}},
-        {4,{"Создание объекта с клавиатуры", createProCons}},
-        {5,{"Товар и его характеристики", showArrayPro(vectorOfAllPolynoms)}},
-        {6,{"Сложение(объединение партий товаров)", calcValPro}},
-        {7,{"Сравнение по цене", sravArrProduct}},
-        {8,{"Сложение по цене", summArrProduct}},
-        {9,{"Постфиксный и префиксный инкремент по цене", createProDefault}},
-        {10,{"Присваивание", addProduct}},
+        {2,{"Преобразование", createProName}},
+        // {3,{"Параметризованный", createProCoeff}},
+        // {4,{"Создание объекта с клавиатуры", createProCons}},
+        {5,{"Показать все Product", showArrayPro}},
+        // {6,{"Сложение(объединение партий товаров)", calcValPro}},
+        // {7,{"Сравнение по цене", sravArrProduct}},
+        // {8,{"Сложение по цене", summArrProduct}},
+        // {9,{"Постфиксный и префиксный инкремент по цене", createProDefault}},
+        // {10,{"Присваивание", addProduct}},
     };
 
-    unsigned choice = 0; //Хранение выбора пользователя
+    int choice = 0; //Хранение выбора пользователя
 
     cout<<"Меню: "<<endl;
 

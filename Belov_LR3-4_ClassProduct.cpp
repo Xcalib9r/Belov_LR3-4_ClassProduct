@@ -32,27 +32,19 @@ ostream& operator<<(ostream& mystream, const Product &obj) {
 
 // Перегрузка оператора ввода
 istream& operator>>(istream& mystream, Product &obj) {
-    cout << "Введите название товара: ";
-    getline(mystream, obj.ProductName);
-    
-    cout << "Введите цену: ";
-    mystream >> obj.price;
-    mystream.ignore();
-
-    cout << "Введите количество: ";
-    mystream >> obj.kolvo;
-    mystream.ignore();
+    EnterString(obj.ProductName,"Введите название товара: ")();
+    EnterNumber(obj.price,"Введите цену: ")();
+    EnterNumber(obj.kolvo,"Введите количество товара:")();
+   
+    cout<<"======================";
 
     obj.ListIngridient.clear();
     int ingrCount;
-    cout << "Введите количество ингредиентов: ";
-    mystream >> ingrCount;
-    mystream.ignore();
+    EnterNumber(ingrCount,"Введите количество ингридиентов: ")();
     
     for (int i = 0; i < ingrCount; ++i) {
         string ingr;
-        cout << "Ингредиент " << i + 1 << ": ";
-        getline(mystream, ingr);
+        EnterString(ingr,"Ингредиент "+to_string (i + 1) + ": ")();
         obj.ListIngridient.push_back(ingr);
     }
 
@@ -79,9 +71,9 @@ Product Product::operator&(const Product &b) {
 }
 
 // Перегрузка оператора сравнения по цене
-bool Product::operator>(const Product &b) {
-    return this->price > b.price;
-}
+// bool Product::operator>(const Product &b) {
+//     return this->price > b.price;
+// }
 
 // Перегрузка оператора сложения по цене (результат — сумма цен)
 float Product::operator+(const Product &b) {
