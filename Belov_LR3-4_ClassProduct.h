@@ -45,7 +45,7 @@ class Product
     bool operator<(const Product &b){return this->price<b.price;}
     bool operator>=(const Product &b){return this->price>=b.price;}
     bool operator<=(const Product &b){return this->price<=b.price;}
-    bool operator==(const Product &b){return this->price=b.price;}
+    bool operator==(const Product &b){return this->price==b.price;}
     bool operator!=(const Product &b){return this->price!=b.price;}
     
 

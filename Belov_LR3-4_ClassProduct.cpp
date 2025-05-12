@@ -25,7 +25,7 @@ ostream& operator<<(ostream& mystream, const Product &obj) {
     mystream << "Название: " << obj.ProductName << "\nЦена: " << obj.price
              << "\nКоличество: " << obj.kolvo << "\nИнгредиенты: ";
     for (const auto& ingr : obj.ListIngridient) {
-        mystream << ingr << ", ";
+        mystream << ingr << " ";
     }
     return mystream;
 }
@@ -59,14 +59,14 @@ float Product::calculateTotalCost() const {
 // Перегрузка оператора сложения (объединение партий)
 Product Product::operator&(const Product &b) {
     Product result = *this;
-    if (this->ProductName == b.ProductName && this->price == b.price) {
-        result.kolvo += b.kolvo;
+    result.ProductName= this->ProductName + "   " + b.ProductName;
+    result.kolvo += b.kolvo;
         for (const auto& ingr : b.ListIngridient) {
-            if (find(result.ListIngridient.begin(), result.ListIngridient.end(), ingr) == result.ListIngridient.end()) {
+            // if (find(result.ListIngridient.begin(), result.ListIngridient.end(), ingr) == result.ListIngridient.end()) {
                 result.ListIngridient.push_back(ingr);
             }
-        }
-    }
+        
+    // }
     return result;
 }
 

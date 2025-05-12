@@ -13,13 +13,13 @@ int main()
     map<int, MenuItem> menu = {
         {1,{"Создание дефолтного конструктора Product", createProDefault}},
         {2,{"Преобразование", createProName}},
-        // {3,{"Параметризованный", createProCoeff}},
-        // {4,{"Создание объекта с клавиатуры", createProCons}},
+         {3,{"Параметризованный", createProCoeff}},
+         {4,{"Создание объекта с клавиатуры", createProCons}},
         {5,{"Показать все Product", showArrayPro}},
-        // {6,{"Сложение(объединение партий товаров)", calcValPro}},
-        // {7,{"Сравнение по цене", sravArrProduct}},
-        // {8,{"Сложение по цене", summArrProduct}},
-        // {9,{"Постфиксный и префиксный инкремент по цене", createProDefault}},
+        {6,{"Сложение(объединение партий товаров)", calcValPro}},
+        {7,{"Сравнение по цене", sravArrProduct}},
+         {8,{"Сложение по цене", summArrProduct}},
+        // {9,{"Постфиксный и префиксный инкремент по цене", addPostAndPref}},
         // {10,{"Присваивание", addProduct}},
     };
 
