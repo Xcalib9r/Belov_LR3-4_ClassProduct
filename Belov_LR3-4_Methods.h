@@ -92,9 +92,10 @@ void createProDefault()
 void showArrayPro()
 {
     cout<<"\n======================\n";
+    int count = 0;
     for(const auto& product:VC_Product)
     {
-        cout<<"\nПродукт по списку: "<<product;
+        cout<<"\nПродукт по списку № "<< count++ << ":\n" <<product;
         cout<<"\n--------------------------\n";
     }
     cout<<"\n=======================\n";
@@ -192,15 +193,31 @@ void summArrProduct(){
     EnterNumber(n2,"Введите номер продукта: ")();
     float price=VC_Product[n1]+VC_Product[n2];
     cout << price << endl;
-    
 }
 //9)Пункт вызова addPostAndPref
 void addPostAndPref(){
-
+    showArrayPro();
+    int n1;
+    EnterNumber(n1,"Введите номер продукта: ")();
+    cout<<"Постфиксный икремент: "<<endl;
+    cout<<VC_Product[n1]<<endl;
+    cout<<VC_Product[n1]++<<endl;
+    cout<<VC_Product[n1]<<endl;
+    cout<<"\n=======================\n";
+    cout<<"Префиксный икремент: "<<endl;
+    cout<<VC_Product[n1]<<endl;
+    cout<<++VC_Product[n1]<<endl;
 }
 //10)Пункт вызова addProduct
-void addProduct(){
-
+void equalProduct(){
+    showArrayPro();
+    int n1;
+    EnterNumber(n1,"Введите номер продукта который хотите присвоить: ")();
+    int n2;
+    EnterNumber(n2,"Введите номер продукта к которому хотите присвоить: ")();
+    cout<<"\n=======================\n";
+    cout<<"Получаемый продукт: "<<endl;
+    VC_Product[n1]=VC_Product[n2];
+    showArrayPro();
 }
-
 //реализация всего что вызывается в menu 
